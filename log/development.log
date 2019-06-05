@@ -41992,3 +41992,2174 @@ Processing by HousesController#create as HTML
 Completed 200 OK in 647ms (Views: 610.3ms | ActiveRecord: 0.6ms)
 
 
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from instance_eval at /Users/barbchoy/.rvm/gems/ruby-2.6.1/gems/activesupport-5.2.3/lib/active_support/lazy_load_hooks.rb:71)
+Started GET "/" for ::1 at 2019-05-27 18:30:43 -0700
+  [1m[35m (18.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 1533ms (Views: 1526.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-05-27 22:25:05 -0700
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 2635ms (Views: 2242.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signin" for ::1 at 2019-05-27 22:29:04 -0700
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (277.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 17371ms (Views: 4359.0ms | ActiveRecord: 278.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-05-28 14:42:56 -0700
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 1706ms (Views: 1695.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2019-05-28 14:43:02 -0700
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (60.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 131ms (Views: 57.6ms | ActiveRecord: 60.8ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2019-05-28 14:43:06 -0700
+Started GET "/auth/facebook" for 127.0.0.1 at 2019-05-28 14:43:11 -0700
+Started GET "/" for 127.0.0.1 at 2019-05-28 14:43:34 -0700
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 112ms (Views: 109.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2019-05-28 14:43:37 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 681ms (Views: 662.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2019-05-28 14:43:41 -0700
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 61ms (Views: 57.9ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/signin" for 127.0.0.1 at 2019-05-28 14:43:51 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ygr0smBypAKwJoDjlaJuka/ljiHHYg60PoDkYCXR9ndxM0XNh6OhMO8pi9xDv13C+fX22NybrHOLzvL68/RRaw==", "user_name"=>"Barbara", "password"=>"[FILTERED]", "commit"=>"Sign In"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Barbara"], ["LIMIT", 1]]
+Redirected to http://0.0.0.0:3000/users/17
+Completed 302 Found in 253ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/users/17" for 127.0.0.1 at 2019-05-28 14:43:51 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_form.html.erb (0.8ms)
+  Rendered users/show.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 124ms (Views: 79.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/houses" for 127.0.0.1 at 2019-05-28 14:43:54 -0700
+Processing by HousesController#index as HTML
+  Rendering houses/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  Rendered users/_form.html.erb (0.7ms)
+  [1m[36mHouse Load (0.6ms)[0m  [1m[34mSELECT "houses".* FROM "houses"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[36mCACHE House Load (0.0ms)[0m  [1m[34mSELECT "houses".* FROM "houses"[0m
+  Rendered houses/index.html.erb within layouts/application (74.4ms)
+Completed 200 OK in 221ms (Views: 129.4ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/users/17" for 127.0.0.1 at 2019-05-28 14:44:03 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_form.html.erb (0.8ms)
+  Rendered users/show.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 55ms (Views: 50.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/17/edit" for 127.0.0.1 at 2019-05-28 14:44:04 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_user.html.erb (1.0ms)
+  Rendered users/edit.html.erb within layouts/application (5.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+Completed 200 OK in 151ms (Views: 63.8ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/users/17" for 127.0.0.1 at 2019-05-28 14:44:12 -0700
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YM9Lb/d8Q0y9iDLRJU762eBpppTQKyJCDf9SCDMqo6dLLB/Ali7v4zH+OEc+5qm6Oz+X8EZ+ee09xyQTpsNBqw==", "user"=>{"email"=>"", "balance"=>"1000", "guests"=>"5", "pets"=>"false"}, "commit"=>"Update Profile", "id"=>"17"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (0.9ms)[0m  [1m[33mUPDATE "users" SET "email" = ?, "balance" = ?, "guests" = ? WHERE "users"."id" = ?[0m  [["email", ""], ["balance", 1000], ["guests", 5], ["id", 17]]
+  [1m[35m (52.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/users/17
+Completed 302 Found in 63ms (ActiveRecord: 54.1ms)
+
+
+Started GET "/users/17" for 127.0.0.1 at 2019-05-28 14:44:12 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_form.html.erb (0.6ms)
+  Rendered users/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 69ms (Views: 65.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/17/reviews" for 127.0.0.1 at 2019-05-28 14:44:15 -0700
+Processing by ReviewsController#index as HTML
+  Parameters: {"user_id"=>"17"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = ?[0m  [["user_id", 17]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  Rendered reviews/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 88ms (Views: 54.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/17" for 127.0.0.1 at 2019-05-28 14:44:17 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_form.html.erb (1.2ms)
+  Rendered users/show.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 80ms (Views: 73.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/houses" for 127.0.0.1 at 2019-05-28 14:44:19 -0700
+Processing by HousesController#index as HTML
+  Rendering houses/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  Rendered users/_form.html.erb (1.0ms)
+  [1m[36mHouse Load (0.2ms)[0m  [1m[34mSELECT "houses".* FROM "houses"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[36mCACHE House Load (0.0ms)[0m  [1m[34mSELECT "houses".* FROM "houses"[0m
+  Rendered houses/index.html.erb within layouts/application (27.9ms)
+Completed 200 OK in 276ms (Views: 245.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/houses/1" for 127.0.0.1 at 2019-05-28 14:44:21 -0700
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHouse Load (0.4ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering houses/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."house_id" = ?[0m  [["house_id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."cleanliness_rating") FROM "reviews" WHERE "reviews"."house_id" = ?[0m  [["house_id", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("reviews"."location_rating") FROM "reviews" WHERE "reviews"."house_id" = ?[0m  [["house_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT AVG("reviews"."value_rating") FROM "reviews" WHERE "reviews"."house_id" = ?[0m  [["house_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("reviews"."cleanliness_rating") FROM "reviews" WHERE "reviews"."house_id" = ?[0m  [["house_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("reviews"."location_rating") FROM "reviews" WHERE "reviews"."house_id" = ?[0m  [["house_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("reviews"."value_rating") FROM "reviews" WHERE "reviews"."house_id" = ?[0m  [["house_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."house_id" = ?[0m  [["house_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."house_id" = ?[0m  [["house_id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered houses/show.html.erb within layouts/application (35.1ms)
+Completed 200 OK in 123ms (Views: 103.9ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-05-28 14:49:31 -0700
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+Completed 200 OK in 393ms (Views: 383.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/17" for 127.0.0.1 at 2019-05-28 14:49:33 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_form.html.erb (0.6ms)
+  Rendered users/show.html.erb within layouts/application (19.5ms)
+Completed 200 OK in 164ms (Views: 136.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/houses" for 127.0.0.1 at 2019-05-28 14:49:46 -0700
+Processing by HousesController#index as HTML
+  Rendering houses/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  Rendered users/_form.html.erb (0.8ms)
+  [1m[36mHouse Load (0.5ms)[0m  [1m[34mSELECT "houses".* FROM "houses"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[36mCACHE House Load (0.0ms)[0m  [1m[34mSELECT "houses".* FROM "houses"[0m
+  Rendered houses/index.html.erb within layouts/application (34.0ms)
+Completed 200 OK in 162ms (Views: 133.9ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/houses/1" for 127.0.0.1 at 2019-05-28 14:49:55 -0700
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHouse Load (0.5ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering houses/show.html.erb within layouts/application
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."house_id" = ?[0m  [["house_id", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("reviews"."cleanliness_rating") FROM "reviews" WHERE "reviews"."house_id" = ?[0m  [["house_id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT AVG("reviews"."location_rating") FROM "reviews" WHERE "reviews"."house_id" = ?[0m  [["house_id", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("reviews"."value_rating") FROM "reviews" WHERE "reviews"."house_id" = ?[0m  [["house_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("reviews"."cleanliness_rating") FROM "reviews" WHERE "reviews"."house_id" = ?[0m  [["house_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("reviews"."location_rating") FROM "reviews" WHERE "reviews"."house_id" = ?[0m  [["house_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("reviews"."value_rating") FROM "reviews" WHERE "reviews"."house_id" = ?[0m  [["house_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."house_id" = ?[0m  [["house_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."house_id" = ?[0m  [["house_id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered houses/show.html.erb within layouts/application (18.7ms)
+Completed 200 OK in 176ms (Views: 121.0ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/houses/1/reviews" for 127.0.0.1 at 2019-05-28 14:49:59 -0700
+Processing by ReviewsController#index as HTML
+  Parameters: {"house_id"=>"1"}
+  [1m[36mHouse Load (0.2ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."house_id" = ?[0m  [["house_id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  Rendered reviews/_review.html.erb (47.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  Rendered reviews/_review.html.erb (1.2ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  Rendered reviews/_review.html.erb (1.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  Rendered reviews/_review.html.erb (2.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  Rendered reviews/index.html.erb within layouts/application (127.3ms)
+Completed 200 OK in 255ms (Views: 230.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/houses" for 127.0.0.1 at 2019-05-28 14:50:04 -0700
+Processing by HousesController#index as HTML
+  Rendering houses/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  Rendered users/_form.html.erb (0.8ms)
+  [1m[36mHouse Load (0.5ms)[0m  [1m[34mSELECT "houses".* FROM "houses"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[36mCACHE House Load (0.0ms)[0m  [1m[34mSELECT "houses".* FROM "houses"[0m
+  Rendered houses/index.html.erb within layouts/application (82.7ms)
+Completed 200 OK in 204ms (Views: 195.8ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/houses/1" for 127.0.0.1 at 2019-05-28 14:50:05 -0700
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHouse Load (0.6ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering houses/show.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."house_id" = ?[0m  [["house_id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."cleanliness_rating") FROM "reviews" WHERE "reviews"."house_id" = ?[0m  [["house_id", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("reviews"."location_rating") FROM "reviews" WHERE "reviews"."house_id" = ?[0m  [["house_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT AVG("reviews"."value_rating") FROM "reviews" WHERE "reviews"."house_id" = ?[0m  [["house_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("reviews"."cleanliness_rating") FROM "reviews" WHERE "reviews"."house_id" = ?[0m  [["house_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("reviews"."location_rating") FROM "reviews" WHERE "reviews"."house_id" = ?[0m  [["house_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("reviews"."value_rating") FROM "reviews" WHERE "reviews"."house_id" = ?[0m  [["house_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."house_id" = ?[0m  [["house_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."house_id" = ?[0m  [["house_id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered houses/show.html.erb within layouts/application (29.6ms)
+Completed 200 OK in 174ms (Views: 167.4ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/stays" for 127.0.0.1 at 2019-05-28 14:50:12 -0700
+Processing by StaysController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"u8e+/cqq9TaTFSNgb3VOiwHAb85hNJ4j05ioDcspGIG1ptohauKvZcdv+iZ9x5nUGoqdzMYlw4Q2Ke/kCMs/Jw==", "guest_id"=>"17", "house_id"=>"1", "days"=>"3", "commit"=>"Book This House"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mHouse Load (0.1ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStay Create (171.3ms)[0m  [1m[32mINSERT INTO "stays" ("guest_id", "house_id") VALUES (?, ?)[0m  [["guest_id", 17], ["house_id", 1]]
+  [1m[35m (73.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/users/17?house=1&message=Sorry+you+have+exceeded+the+maximum+number+of+guests+allowed+in+Studio+Guest+House+Hot+Tub+Wifi.%0A%0A++++++Please+choose+another+house+or+edit+your+profile.
+Completed 302 Found in 329ms (ActiveRecord: 248.9ms)
+
+
+Started GET "/users/17?house=1&message=Sorry+you+have+exceeded+the+maximum+number+of+guests+allowed+in+Studio+Guest+House+Hot+Tub+Wifi.%0A%0A++++++Please+choose+another+house+or+edit+your+profile." for 127.0.0.1 at 2019-05-28 14:50:13 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"house"=>"1", "message"=>"Sorry you have exceeded the maximum number of guests allowed in Studio Guest House Hot Tub Wifi.\n\n      Please choose another house or edit your profile.", "id"=>"17"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_form.html.erb (1.1ms)
+  Rendered users/show.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 143ms (Views: 139.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/houses" for 127.0.0.1 at 2019-05-28 14:50:45 -0700
+Processing by HousesController#index as HTML
+  Rendering houses/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  Rendered users/_form.html.erb (0.8ms)
+  [1m[36mHouse Load (0.3ms)[0m  [1m[34mSELECT "houses".* FROM "houses"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[36mCACHE House Load (0.0ms)[0m  [1m[34mSELECT "houses".* FROM "houses"[0m
+  Rendered houses/index.html.erb within layouts/application (42.1ms)
+Completed 200 OK in 174ms (Views: 169.4ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/houses/2" for 127.0.0.1 at 2019-05-28 14:50:50 -0700
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mHouse Load (0.2ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering houses/show.html.erb within layouts/application
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."house_id" = ?[0m  [["house_id", 2]]
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT AVG("reviews"."cleanliness_rating") FROM "reviews" WHERE "reviews"."house_id" = ?[0m  [["house_id", 2]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."location_rating") FROM "reviews" WHERE "reviews"."house_id" = ?[0m  [["house_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT AVG("reviews"."value_rating") FROM "reviews" WHERE "reviews"."house_id" = ?[0m  [["house_id", 2]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("reviews"."cleanliness_rating") FROM "reviews" WHERE "reviews"."house_id" = ?[0m  [["house_id", 2]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("reviews"."location_rating") FROM "reviews" WHERE "reviews"."house_id" = ?[0m  [["house_id", 2]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("reviews"."value_rating") FROM "reviews" WHERE "reviews"."house_id" = ?[0m  [["house_id", 2]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."house_id" = ?[0m  [["house_id", 2]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."house_id" = ?[0m  [["house_id", 2]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered houses/show.html.erb within layouts/application (26.8ms)
+Completed 200 OK in 128ms (Views: 119.7ms | ActiveRecord: 3.9ms)
+
+
+Started POST "/stays" for 127.0.0.1 at 2019-05-28 14:50:55 -0700
+Processing by StaysController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"t4u7Jd1Dg6gejtE5hinH2cRWeH+Om3QcFID3na4Cbtm56t/5fQvZ+0r0CH+UmxCG3xyKfSmKKbvxMbB0beBJfw==", "guest_id"=>"17", "house_id"=>"2", "days"=>"1", "commit"=>"Book This House"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mHouse Load (0.1ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStay Create (0.9ms)[0m  [1m[32mINSERT INTO "stays" ("guest_id", "house_id") VALUES (?, ?)[0m  [["guest_id", 17], ["house_id", 2]]
+  [1m[35m (13.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (0.7ms)[0m  [1m[33mUPDATE "users" SET "balance" = ? WHERE "users"."id" = ?[0m  [["balance", 846], ["id", 17]]
+  [1m[35m (67.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/users/17?house=2&message=Thank+you+for+staying+in+Amazing+A-frame+cabin+with+hot+tub%2C+2+fireplaces+%26+more.+%24154+has+been+deducted+from+your+account+balance.
+Completed 302 Found in 98ms (ActiveRecord: 83.7ms)
+
+
+Started GET "/users/17?house=2&message=Thank+you+for+staying+in+Amazing+A-frame+cabin+with+hot+tub%2C+2+fireplaces+%26+more.+%24154+has+been+deducted+from+your+account+balance." for 127.0.0.1 at 2019-05-28 14:50:56 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"house"=>"2", "message"=>"Thank you for staying in Amazing A-frame cabin with hot tub, 2 fireplaces & more. $154 has been deducted from your account balance.", "id"=>"17"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_form.html.erb (0.8ms)
+  Rendered users/show.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 118ms (Views: 106.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/houses/2/reviews/new" for 127.0.0.1 at 2019-05-28 14:51:05 -0700
+Processing by ReviewsController#new as HTML
+  Parameters: {"house_id"=>"2"}
+  [1m[36mHouse Load (0.4ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  Rendered reviews/new.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 144ms (Views: 104.2ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/houses/2/reviews" for 127.0.0.1 at 2019-05-28 14:51:14 -0700
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EYpJfDT+/EVdwmZsoBJzmRSVwWl3UlcmBjD5FssyG1TJZBT7dOA94mNdtb/AX+g8QD6rNZyT1AHH+CQXMw3ZuQ==", "review"=>{"title"=>"Nice house", "cleanliness_rating"=>"4", "location_rating"=>"4", "value_rating"=>"4", "comments"=>"", "house_id"=>"2", "user_id"=>"17"}, "commit"=>"Submit Review", "house_id"=>"2"}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mHouse Load (0.2ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReview Create (0.9ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "cleanliness_rating", "location_rating", "value_rating", "comments", "house_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Nice house"], ["cleanliness_rating", 4], ["location_rating", 4], ["value_rating", 4], ["comments", ""], ["house_id", 2], ["user_id", 17], ["created_at", "2019-05-28 21:51:14.785426"], ["updated_at", "2019-05-28 21:51:14.785426"]]
+  [1m[35m (34.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/reviews/11
+Completed 302 Found in 50ms (ActiveRecord: 35.7ms)
+
+
+Started GET "/reviews/11" for 127.0.0.1 at 2019-05-28 14:51:14 -0700
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  [1m[36mHouse Load (0.2ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  Rendered reviews/_review.html.erb (4.5ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  Rendered reviews/show.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 245ms (Views: 194.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/17" for 127.0.0.1 at 2019-05-28 14:51:17 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_form.html.erb (1.1ms)
+  Rendered users/show.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 136ms (Views: 132.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/houses" for 127.0.0.1 at 2019-05-28 14:51:41 -0700
+Processing by HousesController#index as HTML
+  Rendering houses/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  Rendered users/_form.html.erb (1.1ms)
+  [1m[36mHouse Load (0.3ms)[0m  [1m[34mSELECT "houses".* FROM "houses"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[36mCACHE House Load (0.1ms)[0m  [1m[34mSELECT "houses".* FROM "houses"[0m
+  Rendered houses/index.html.erb within layouts/application (38.8ms)
+Completed 200 OK in 157ms (Views: 151.9ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/houses/1" for 127.0.0.1 at 2019-05-28 14:52:12 -0700
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHouse Load (0.4ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering houses/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."house_id" = ?[0m  [["house_id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."cleanliness_rating") FROM "reviews" WHERE "reviews"."house_id" = ?[0m  [["house_id", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("reviews"."location_rating") FROM "reviews" WHERE "reviews"."house_id" = ?[0m  [["house_id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."value_rating") FROM "reviews" WHERE "reviews"."house_id" = ?[0m  [["house_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("reviews"."cleanliness_rating") FROM "reviews" WHERE "reviews"."house_id" = ?[0m  [["house_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("reviews"."location_rating") FROM "reviews" WHERE "reviews"."house_id" = ?[0m  [["house_id", 1]]
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT AVG("reviews"."value_rating") FROM "reviews" WHERE "reviews"."house_id" = ?[0m  [["house_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."house_id" = ?[0m  [["house_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."house_id" = ?[0m  [["house_id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered houses/show.html.erb within layouts/application (19.2ms)
+Completed 200 OK in 129ms (Views: 123.0ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/houses/1/reviews" for 127.0.0.1 at 2019-05-28 14:52:31 -0700
+Processing by ReviewsController#index as HTML
+  Parameters: {"house_id"=>"1"}
+  [1m[36mHouse Load (0.3ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."house_id" = ?[0m  [["house_id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  Rendered reviews/_review.html.erb (4.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  Rendered reviews/_review.html.erb (1.4ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  Rendered reviews/_review.html.erb (2.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  Rendered reviews/_review.html.erb (2.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  Rendered reviews/index.html.erb within layouts/application (21.3ms)
+Completed 200 OK in 127ms (Views: 120.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-05-28 14:53:27 -0700
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+Completed 200 OK in 90ms (Views: 87.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2019-05-28 14:53:30 -0700
+Processing by SessionsController#destroy as HTML
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-05-28 14:53:30 -0700
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 65ms (Views: 63.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2019-05-28 14:53:32 -0700
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 114ms (Views: 57.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2019-05-28 14:53:33 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 63ms (Views: 60.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2019-05-28 14:53:41 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wJ7hJyK+iExZ5cMptClm1EDlVFrHjDZ5SHJxEadVe6WVn92uMdaQQnfN/RVUZ0ow7qf5K6jzJjGxzePWCjy9+w==", "user"=>{"name"=>"Barbara new", "password"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (1.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "password_digest", "owner") VALUES (?, ?, ?)[0m  [["name", "Barbara new"], ["password_digest", "$2a$10$HWORrMhbTilgXtpxazRsaON6dNcgcKhOTmacgEZew6VfxZqRsYHb2"], ["owner", nil]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/users/24/edit
+Completed 302 Found in 107ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/users/24/edit" for 127.0.0.1 at 2019-05-28 14:53:41 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"24"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_user.html.erb (1.4ms)
+  Rendered users/edit.html.erb within layouts/application (7.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+Completed 200 OK in 234ms (Views: 168.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-05-28 14:54:11 -0700
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+Completed 200 OK in 97ms (Views: 94.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/24" for 127.0.0.1 at 2019-05-28 14:54:12 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_form.html.erb (1.1ms)
+  Rendered users/show.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 101ms (Views: 96.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2019-05-28 14:54:23 -0700
+Processing by SessionsController#destroy as HTML
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-05-28 14:54:23 -0700
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 83ms (Views: 81.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2019-05-28 14:54:24 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 80ms (Views: 78.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2019-05-28 14:54:35 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8OY+KBgYMIX4fxDJUjxwbTSK5OWxDriXNLWVU4SG0nKl5wKhC3Aoi9ZXLvWyclyJmshJlN5xqN/NCgeUKe8ULA==", "user"=>{"name"=>"Owner B", "password"=>"[FILTERED]", "owner"=>"1"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "password_digest", "owner") VALUES (?, ?, ?)[0m  [["name", "Owner B"], ["password_digest", "$2a$10$/PhRQ6yruv5LBXOqBxDgtOob5ZPwQWtXpIn5PWd897a.vAoLj1LI2"], ["owner", "t"]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/users/25
+Completed 302 Found in 105ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/users/25" for 127.0.0.1 at 2019-05-28 14:54:36 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 177ms (Views: 161.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/houses" for 127.0.0.1 at 2019-05-28 14:54:38 -0700
+Processing by HousesController#index as HTML
+  Rendering houses/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  [1m[36mHouse Load (0.4ms)[0m  [1m[34mSELECT "houses".* FROM "houses"[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[36mCACHE House Load (0.0ms)[0m  [1m[34mSELECT "houses".* FROM "houses"[0m
+  Rendered houses/index.html.erb within layouts/application (37.1ms)
+Completed 200 OK in 198ms (Views: 189.5ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/houses/new" for 127.0.0.1 at 2019-05-28 14:54:40 -0700
+Processing by HousesController#new as HTML
+  Rendering houses/new.html.erb within layouts/application
+  Rendered houses/_house.html.erb (1.5ms)
+  Rendered houses/new.html.erb within layouts/application (16.8ms)
+  [1m[36mUser Load (5.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+Completed 200 OK in 179ms (Views: 127.6ms | ActiveRecord: 5.5ms)
+
+
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from instance_eval at /Users/barbchoy/.rvm/gems/ruby-2.6.1/gems/activesupport-5.2.3/lib/active_support/lazy_load_hooks.rb:71)
+Started GET "/houses" for ::1 at 2019-06-02 18:19:21 -0700
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HousesController#index as HTML
+  Rendering houses/index.html.erb within layouts/application
+  Rendered houses/index.html.erb within layouts/application (33.3ms)
+Completed 500 Internal Server Error in 143ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `owner' for nil:NilClass):
+    1: <% if !current_user.owner %>
+    2: <%=render partial: 'users/form', locals: {user: current_user} %>
+    3: <% end %>
+    4: <h1>Houses For Rent</h1>
+  
+app/views/houses/index.html.erb:1:in `_app_views_houses_index_html_erb__323501701394306005_70306843851240'
+Started GET "/houses" for ::1 at 2019-06-02 18:20:29 -0700
+Processing by HousesController#index as HTML
+  Rendering houses/index.html.erb within layouts/application
+  Rendered houses/index.html.erb within layouts/application (3.1ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `owner' for nil:NilClass):
+    1: <% if !current_user.owner %>
+    2: <%=render partial: 'users/form', locals: {user: current_user} %>
+    3: <% end %>
+    4: <h1>Houses For Rent</h1>
+  
+app/views/houses/index.html.erb:1:in `_app_views_houses_index_html_erb__323501701394306005_70306866164220'
+Started GET "/houses" for ::1 at 2019-06-02 18:20:37 -0700
+Processing by HousesController#index as HTML
+  Rendering houses/index.html.erb within layouts/application
+  Rendered houses/index.html.erb within layouts/application (3.2ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `owner' for nil:NilClass):
+    1: <% if !current_user.owner %>
+    2: <%=render partial: 'users/form', locals: {user: current_user} %>
+    3: <% end %>
+    4: <h1>Houses For Rent</h1>
+  
+app/views/houses/index.html.erb:1:in `_app_views_houses_index_html_erb__323501701394306005_70306865649680'
+Started GET "/" for ::1 at 2019-06-02 18:20:49 -0700
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 933ms (Views: 900.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signin" for ::1 at 2019-06-02 18:20:56 -0700
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 121ms (Views: 53.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/auth/facebook" for ::1 at 2019-06-02 18:20:58 -0700
+Started GET "/auth/facebook" for ::1 at 2019-06-02 18:20:58 -0700
+Started GET "/" for 127.0.0.1 at 2019-06-02 18:22:12 -0700
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+Completed 200 OK in 906ms (Views: 862.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/25" for 127.0.0.1 at 2019-06-02 18:22:24 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 91ms (Views: 59.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2019-06-02 18:22:27 -0700
+Processing by SessionsController#destroy as HTML
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-06-02 18:22:27 -0700
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 60ms (Views: 58.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2019-06-02 18:22:29 -0700
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (28.2ms)
+Completed 200 OK in 108ms (Views: 74.9ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2019-06-02 18:22:30 -0700
+Started GET "/auth/facebook" for 127.0.0.1 at 2019-06-02 18:22:30 -0700
+Started GET "/" for 127.0.0.1 at 2019-06-03 09:13:35 -0700
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 1818ms (Views: 1773.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2019-06-03 09:15:31 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 79ms (Views: 47.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2019-06-03 09:15:35 -0700
+Started GET "/auth/facebook" for 127.0.0.1 at 2019-06-03 09:15:36 -0700
+Started GET "/" for 127.0.0.1 at 2019-06-03 09:16:38 -0700
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 1180ms (Views: 1154.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2019-06-03 09:16:43 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 90ms (Views: 43.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2019-06-03 09:16:48 -0700
+Started GET "/auth/facebook" for 127.0.0.1 at 2019-06-03 09:16:48 -0700
+Started GET "/" for ::1 at 2019-06-03 09:22:13 -0700
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 1958ms (Views: 1770.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2019-06-03 09:22:19 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 94ms (Views: 43.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for ::1 at 2019-06-03 09:22:20 -0700
+Started GET "/auth/facebook" for ::1 at 2019-06-03 09:22:21 -0700
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from load at /Users/barbchoy/.rvm/gems/ruby-2.6.1/bin/thin:23)
+Started GET "/" for 127.0.0.1 at 2019-06-03 09:32:03 -0700
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 646ms (Views: 640.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2019-06-03 09:32:07 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 131ms (Views: 37.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2019-06-03 09:32:10 -0700
+Started GET "/auth/facebook" for 127.0.0.1 at 2019-06-03 09:32:10 -0700
+Started GET "/auth/facebook/callback?error_code=1349168&error_message=URL+Blocked%3A+This+redirect+failed+because+the+redirect+URI+is+not+whitelisted+in+the+app%E2%80%99s+Client+OAuth+Settings.+Make+sure+Client+and+Web+OAuth+Login+are+on+and+add+all+your+app+domains+as+Valid+OAuth+Redirect+URIs." for 127.0.0.1 at 2019-06-03 09:39:44 -0700
+  
+OmniAuth::Strategies::Facebook::NoAuthorizationCodeError (must pass either a `code` (via URL or by an `fbsr_XXX` signed request cookie)):
+  
+omniauth-facebook (5.0.0) lib/omniauth/strategies/facebook.rb:147:in `with_authorization_code!'
+omniauth-facebook (5.0.0) lib/omniauth/strategies/facebook.rb:66:in `callback_phase'
+omniauth (1.9.0) lib/omniauth/strategy.rb:238:in `callback_call'
+omniauth (1.9.0) lib/omniauth/strategy.rb:189:in `call!'
+omniauth (1.9.0) lib/omniauth/strategy.rb:169:in `call'
+omniauth (1.9.0) lib/omniauth/builder.rb:64:in `call'
+rack (2.0.6) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+thin (1.7.2) lib/thin/connection.rb:86:in `block in pre_process'
+thin (1.7.2) lib/thin/connection.rb:84:in `catch'
+thin (1.7.2) lib/thin/connection.rb:84:in `pre_process'
+thin (1.7.2) lib/thin/connection.rb:53:in `process'
+thin (1.7.2) lib/thin/connection.rb:39:in `receive_data'
+eventmachine (1.2.7) lib/eventmachine.rb:195:in `run_machine'
+eventmachine (1.2.7) lib/eventmachine.rb:195:in `run'
+thin (1.7.2) lib/thin/backends/base.rb:73:in `start'
+thin (1.7.2) lib/thin/server.rb:162:in `start'
+thin (1.7.2) lib/thin/controllers/controller.rb:87:in `start'
+thin (1.7.2) lib/thin/runner.rb:203:in `run_command'
+thin (1.7.2) lib/thin/runner.rb:159:in `run!'
+thin (1.7.2) bin/thin:6:in `<top (required)>'
+/Users/barbchoy/.rvm/gems/ruby-2.6.1/bin/thin:23:in `load'
+/Users/barbchoy/.rvm/gems/ruby-2.6.1/bin/thin:23:in `<main>'
+/Users/barbchoy/.rvm/gems/ruby-2.6.1/bin/ruby_executable_hooks:24:in `eval'
+/Users/barbchoy/.rvm/gems/ruby-2.6.1/bin/ruby_executable_hooks:24:in `<main>'
+Started GET "/" for 127.0.0.1 at 2019-06-03 09:40:25 -0700
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 81ms (Views: 79.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2019-06-03 09:40:37 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 49ms (Views: 47.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2019-06-03 09:40:41 -0700
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 85ms (Views: 38.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2019-06-03 09:40:44 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 72ms (Views: 68.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2019-06-03 09:40:47 -0700
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 51ms (Views: 48.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2019-06-03 09:40:50 -0700
+Started GET "/auth/facebook" for 127.0.0.1 at 2019-06-03 09:40:51 -0700
+Started GET "/auth/facebook/callback?code=AQDAp0V6_wS69u09itwHhqmHFP9TZ19XpzoRVoah2ZZ_zV9gic4ekq2RgBZo7ZF-iqQfvG3Y8mBSg9JCy-XJMAAkLtSq1SGTPVw_4Xko18P9wUI5Pmll-hjPC7uzhxPSmq8JdHrBBFCstww3mmDrdt4aP9e0mrnRx3L0ay3NCNt72hIaXT7zqmsT0DmsgUNtYxWrD7U0BZFbhPlt_yp10gzJ4TPhbnyrZWjrpkQgjYTmAkOB8V_ysG7nBOcupM2-V-0tebO_EgysH4tp6IzPKKP5MV2zmAOznAteZCTCN2Lg0w8i--VTOaIsE05EchSVbp-gQx9Wkix6Z6aqsftPorvXL8qEFRQO70CWOcSUuMD9dA&state=cd6607f559c5b22a894732e9f8f8b5149a11de54938cda11" for 127.0.0.1 at 2019-06-03 09:40:51 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"AQDAp0V6_wS69u09itwHhqmHFP9TZ19XpzoRVoah2ZZ_zV9gic4ekq2RgBZo7ZF-iqQfvG3Y8mBSg9JCy-XJMAAkLtSq1SGTPVw_4Xko18P9wUI5Pmll-hjPC7uzhxPSmq8JdHrBBFCstww3mmDrdt4aP9e0mrnRx3L0ay3NCNt72hIaXT7zqmsT0DmsgUNtYxWrD7U0BZFbhPlt_yp10gzJ4TPhbnyrZWjrpkQgjYTmAkOB8V_ysG7nBOcupM2-V-0tebO_EgysH4tp6IzPKKP5MV2zmAOznAteZCTCN2Lg0w8i--VTOaIsE05EchSVbp-gQx9Wkix6Z6aqsftPorvXL8qEFRQO70CWOcSUuMD9dA", "state"=>"cd6607f559c5b22a894732e9f8f8b5149a11de54938cda11"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "10156880517010605"], ["LIMIT", 1]]
+Redirected to https://localhost:3000/users/12
+Completed 302 Found in 35ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/users/12" for 127.0.0.1 at 2019-06-03 09:40:52 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_form.html.erb (0.5ms)
+  Rendered users/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 69ms (Views: 44.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2019-06-03 09:41:09 -0700
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+Completed 200 OK in 44ms (Views: 41.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2019-06-03 09:41:14 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+Completed 200 OK in 46ms (Views: 44.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2019-06-03 09:41:22 -0700
+Started GET "/auth/facebook" for 127.0.0.1 at 2019-06-03 09:41:22 -0700
+Started GET "/auth/facebook/callback?code=AQCpVasmenQy0wCo0mp0qdOsN5ObRPUG25SuWW0FSN8pV2kYmKNxdSzAixO4U_d3Pp1ZucnwWSuWucyypBb9pFmeX_vdhMIAb0dUg0xKu3XKN297L8GWxYu2LUpkncFO8FQucPRTGN_Ulxj4MHVtEztehazmK7_Ar7uVlF9EVQEcSyq6tassLAwa5zBwf6jQ3RZntDzi89AgboCtVJOCnaWqaf-IPPM9ZGVgPSUh0n9D_KlVnBQ51rbSh89ESABCSFr7ElseYfKbM1eD35q2-QM8QPA5mJsM03wq0u2lKpneWLC8qdb3rusRToXV2TOlhBgeUcDSygZoLlIxfIYxWF8MS2008z2V3xKpwTBcpGqGlg&state=8c11f9ead1bd54c327be0440a7edb74659bd976e4b19d9b2" for 127.0.0.1 at 2019-06-03 09:41:23 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"AQCpVasmenQy0wCo0mp0qdOsN5ObRPUG25SuWW0FSN8pV2kYmKNxdSzAixO4U_d3Pp1ZucnwWSuWucyypBb9pFmeX_vdhMIAb0dUg0xKu3XKN297L8GWxYu2LUpkncFO8FQucPRTGN_Ulxj4MHVtEztehazmK7_Ar7uVlF9EVQEcSyq6tassLAwa5zBwf6jQ3RZntDzi89AgboCtVJOCnaWqaf-IPPM9ZGVgPSUh0n9D_KlVnBQ51rbSh89ESABCSFr7ElseYfKbM1eD35q2-QM8QPA5mJsM03wq0u2lKpneWLC8qdb3rusRToXV2TOlhBgeUcDSygZoLlIxfIYxWF8MS2008z2V3xKpwTBcpGqGlg", "state"=>"8c11f9ead1bd54c327be0440a7edb74659bd976e4b19d9b2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "10156880517010605"], ["LIMIT", 1]]
+Redirected to https://localhost:3000/users/12
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/users/12" for 127.0.0.1 at 2019-06-03 09:41:24 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_form.html.erb (0.4ms)
+  Rendered users/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 43ms (Views: 39.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/houses.json" for 127.0.0.1 at 2019-06-03 09:41:57 -0700
+Processing by HousesController#index as JSON
+Completed 406 Not Acceptable in 123ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UnknownFormat (HousesController#index is missing a template for this request format and variant.
+
+request.formats: ["application/json"]
+request.variant: []):
+  
+actionpack (5.2.3) lib/action_controller/metal/implicit_render.rb:42:in `default_render'
+actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.3) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.3) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.3) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+omniauth (1.9.0) lib/omniauth/strategy.rb:192:in `call!'
+omniauth (1.9.0) lib/omniauth/strategy.rb:169:in `call'
+omniauth (1.9.0) lib/omniauth/builder.rb:64:in `call'
+rack (2.0.6) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+thin (1.7.2) lib/thin/connection.rb:86:in `block in pre_process'
+thin (1.7.2) lib/thin/connection.rb:84:in `catch'
+thin (1.7.2) lib/thin/connection.rb:84:in `pre_process'
+thin (1.7.2) lib/thin/connection.rb:53:in `process'
+thin (1.7.2) lib/thin/connection.rb:39:in `receive_data'
+eventmachine (1.2.7) lib/eventmachine.rb:195:in `run_machine'
+eventmachine (1.2.7) lib/eventmachine.rb:195:in `run'
+thin (1.7.2) lib/thin/backends/base.rb:73:in `start'
+thin (1.7.2) lib/thin/server.rb:162:in `start'
+thin (1.7.2) lib/thin/controllers/controller.rb:87:in `start'
+thin (1.7.2) lib/thin/runner.rb:203:in `run_command'
+thin (1.7.2) lib/thin/runner.rb:159:in `run!'
+thin (1.7.2) bin/thin:6:in `<top (required)>'
+/Users/barbchoy/.rvm/gems/ruby-2.6.1/bin/thin:23:in `load'
+/Users/barbchoy/.rvm/gems/ruby-2.6.1/bin/thin:23:in `<main>'
+/Users/barbchoy/.rvm/gems/ruby-2.6.1/bin/ruby_executable_hooks:24:in `eval'
+/Users/barbchoy/.rvm/gems/ruby-2.6.1/bin/ruby_executable_hooks:24:in `<main>'
+Started GET "/houses" for 127.0.0.1 at 2019-06-03 09:42:02 -0700
+Processing by HousesController#index as HTML
+  Rendering houses/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  Rendered users/_form.html.erb (0.7ms)
+  [1m[36mHouse Load (0.3ms)[0m  [1m[34mSELECT "houses".* FROM "houses"[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[36mCACHE House Load (0.0ms)[0m  [1m[34mSELECT "houses".* FROM "houses"[0m
+  Rendered houses/index.html.erb within layouts/application (69.4ms)
+Completed 200 OK in 145ms (Views: 140.5ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/houses.json" for 127.0.0.1 at 2019-06-03 09:42:20 -0700
+Processing by HousesController#index as JSON
+Completed 406 Not Acceptable in 36ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UnknownFormat (HousesController#index is missing a template for this request format and variant.
+
+request.formats: ["application/json"]
+request.variant: []):
+  
+actionpack (5.2.3) lib/action_controller/metal/implicit_render.rb:42:in `default_render'
+actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.3) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.3) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.3) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+omniauth (1.9.0) lib/omniauth/strategy.rb:192:in `call!'
+omniauth (1.9.0) lib/omniauth/strategy.rb:169:in `call'
+omniauth (1.9.0) lib/omniauth/builder.rb:64:in `call'
+rack (2.0.6) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+thin (1.7.2) lib/thin/connection.rb:86:in `block in pre_process'
+thin (1.7.2) lib/thin/connection.rb:84:in `catch'
+thin (1.7.2) lib/thin/connection.rb:84:in `pre_process'
+thin (1.7.2) lib/thin/connection.rb:53:in `process'
+thin (1.7.2) lib/thin/connection.rb:39:in `receive_data'
+eventmachine (1.2.7) lib/eventmachine.rb:195:in `run_machine'
+eventmachine (1.2.7) lib/eventmachine.rb:195:in `run'
+thin (1.7.2) lib/thin/backends/base.rb:73:in `start'
+thin (1.7.2) lib/thin/server.rb:162:in `start'
+thin (1.7.2) lib/thin/controllers/controller.rb:87:in `start'
+thin (1.7.2) lib/thin/runner.rb:203:in `run_command'
+thin (1.7.2) lib/thin/runner.rb:159:in `run!'
+thin (1.7.2) bin/thin:6:in `<top (required)>'
+/Users/barbchoy/.rvm/gems/ruby-2.6.1/bin/thin:23:in `load'
+/Users/barbchoy/.rvm/gems/ruby-2.6.1/bin/thin:23:in `<main>'
+/Users/barbchoy/.rvm/gems/ruby-2.6.1/bin/ruby_executable_hooks:24:in `eval'
+/Users/barbchoy/.rvm/gems/ruby-2.6.1/bin/ruby_executable_hooks:24:in `<main>'
+Started GET "/houses" for 127.0.0.1 at 2019-06-03 09:42:29 -0700
+Processing by HousesController#index as HTML
+  Rendering houses/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  Rendered users/_form.html.erb (0.8ms)
+  [1m[36mHouse Load (0.3ms)[0m  [1m[34mSELECT "houses".* FROM "houses"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[36mCACHE House Load (0.0ms)[0m  [1m[34mSELECT "houses".* FROM "houses"[0m
+  Rendered houses/index.html.erb within layouts/application (15.3ms)
+Completed 200 OK in 60ms (Views: 57.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/houses/1" for 127.0.0.1 at 2019-06-03 09:42:33 -0700
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHouse Load (0.3ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering houses/show.html.erb within layouts/application
+  [1m[35m (16.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."house_id" = ?[0m  [["house_id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."cleanliness_rating") FROM "reviews" WHERE "reviews"."house_id" = ?[0m  [["house_id", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("reviews"."location_rating") FROM "reviews" WHERE "reviews"."house_id" = ?[0m  [["house_id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."value_rating") FROM "reviews" WHERE "reviews"."house_id" = ?[0m  [["house_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("reviews"."cleanliness_rating") FROM "reviews" WHERE "reviews"."house_id" = ?[0m  [["house_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("reviews"."location_rating") FROM "reviews" WHERE "reviews"."house_id" = ?[0m  [["house_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("reviews"."value_rating") FROM "reviews" WHERE "reviews"."house_id" = ?[0m  [["house_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."house_id" = ?[0m  [["house_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."house_id" = ?[0m  [["house_id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered houses/show.html.erb within layouts/application (76.7ms)
+Completed 200 OK in 141ms (Views: 97.8ms | ActiveRecord: 18.5ms)
+
+
+Started GET "/houses/index.json" for 127.0.0.1 at 2019-06-03 09:42:41 -0700
+Processing by HousesController#show as JSON
+  Parameters: {"id"=>"index"}
+  [1m[36mHouse Load (0.2ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find House with 'id'=index):
+  
+app/controllers/houses_controller.rb:51:in `show'
+Started GET "/" for 127.0.0.1 at 2019-06-03 12:29:03 -0700
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 3899ms (Views: 3849.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/houses.json" for 127.0.0.1 at 2019-06-03 12:29:08 -0700
+Processing by HousesController#index as JSON
+Completed 406 Not Acceptable in 325ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UnknownFormat (HousesController#index is missing a template for this request format and variant.
+
+request.formats: ["application/json"]
+request.variant: []):
+  
+actionpack (5.2.3) lib/action_controller/metal/implicit_render.rb:42:in `default_render'
+actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.3) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.3) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.3) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+omniauth (1.9.0) lib/omniauth/strategy.rb:192:in `call!'
+omniauth (1.9.0) lib/omniauth/strategy.rb:169:in `call'
+omniauth (1.9.0) lib/omniauth/builder.rb:64:in `call'
+rack (2.0.6) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+thin (1.7.2) lib/thin/connection.rb:86:in `block in pre_process'
+thin (1.7.2) lib/thin/connection.rb:84:in `catch'
+thin (1.7.2) lib/thin/connection.rb:84:in `pre_process'
+thin (1.7.2) lib/thin/connection.rb:53:in `process'
+thin (1.7.2) lib/thin/connection.rb:39:in `receive_data'
+eventmachine (1.2.7) lib/eventmachine.rb:195:in `run_machine'
+eventmachine (1.2.7) lib/eventmachine.rb:195:in `run'
+thin (1.7.2) lib/thin/backends/base.rb:73:in `start'
+thin (1.7.2) lib/thin/server.rb:162:in `start'
+thin (1.7.2) lib/thin/controllers/controller.rb:87:in `start'
+thin (1.7.2) lib/thin/runner.rb:203:in `run_command'
+thin (1.7.2) lib/thin/runner.rb:159:in `run!'
+thin (1.7.2) bin/thin:6:in `<top (required)>'
+/Users/barbchoy/.rvm/gems/ruby-2.6.1/bin/thin:23:in `load'
+/Users/barbchoy/.rvm/gems/ruby-2.6.1/bin/thin:23:in `<main>'
+/Users/barbchoy/.rvm/gems/ruby-2.6.1/bin/ruby_executable_hooks:24:in `eval'
+/Users/barbchoy/.rvm/gems/ruby-2.6.1/bin/ruby_executable_hooks:24:in `<main>'
+Started GET "/houses" for 127.0.0.1 at 2019-06-03 12:29:32 -0700
+Processing by HousesController#index as HTML
+  Rendering houses/index.html.erb within layouts/application
+  Rendered houses/index.html.erb within layouts/application (5.6ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `owner' for nil:NilClass):
+    1: <% if !current_user.owner %>
+    2: <%=render partial: 'users/form', locals: {user: current_user} %>
+    3: <% end %>
+    4: <h1>Houses For Rent</h1>
+  
+app/views/houses/index.html.erb:1:in `_app_views_houses_index_html_erb__1244376676280067064_70260373843680'
+Started GET "/" for 127.0.0.1 at 2019-06-03 12:29:39 -0700
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 59ms (Views: 56.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2019-06-03 12:29:41 -0700
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 299ms (Views: 263.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2019-06-03 12:29:44 -0700
+Started GET "/auth/facebook" for 127.0.0.1 at 2019-06-03 12:29:44 -0700
+Started GET "/auth/facebook/callback?error_code=1349168&error_message=URL+Blocked%3A+This+redirect+failed+because+the+redirect+URI+is+not+whitelisted+in+the+app%E2%80%99s+Client+OAuth+Settings.+Make+sure+Client+and+Web+OAuth+Login+are+on+and+add+all+your+app+domains+as+Valid+OAuth+Redirect+URIs." for 127.0.0.1 at 2019-06-03 12:29:53 -0700
+  
+OmniAuth::Strategies::Facebook::NoAuthorizationCodeError (must pass either a `code` (via URL or by an `fbsr_XXX` signed request cookie)):
+  
+omniauth-facebook (5.0.0) lib/omniauth/strategies/facebook.rb:147:in `with_authorization_code!'
+omniauth-facebook (5.0.0) lib/omniauth/strategies/facebook.rb:66:in `callback_phase'
+omniauth (1.9.0) lib/omniauth/strategy.rb:238:in `callback_call'
+omniauth (1.9.0) lib/omniauth/strategy.rb:189:in `call!'
+omniauth (1.9.0) lib/omniauth/strategy.rb:169:in `call'
+omniauth (1.9.0) lib/omniauth/builder.rb:64:in `call'
+rack (2.0.6) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+thin (1.7.2) lib/thin/connection.rb:86:in `block in pre_process'
+thin (1.7.2) lib/thin/connection.rb:84:in `catch'
+thin (1.7.2) lib/thin/connection.rb:84:in `pre_process'
+thin (1.7.2) lib/thin/connection.rb:53:in `process'
+thin (1.7.2) lib/thin/connection.rb:39:in `receive_data'
+eventmachine (1.2.7) lib/eventmachine.rb:195:in `run_machine'
+eventmachine (1.2.7) lib/eventmachine.rb:195:in `run'
+thin (1.7.2) lib/thin/backends/base.rb:73:in `start'
+thin (1.7.2) lib/thin/server.rb:162:in `start'
+thin (1.7.2) lib/thin/controllers/controller.rb:87:in `start'
+thin (1.7.2) lib/thin/runner.rb:203:in `run_command'
+thin (1.7.2) lib/thin/runner.rb:159:in `run!'
+thin (1.7.2) bin/thin:6:in `<top (required)>'
+/Users/barbchoy/.rvm/gems/ruby-2.6.1/bin/thin:23:in `load'
+/Users/barbchoy/.rvm/gems/ruby-2.6.1/bin/thin:23:in `<main>'
+/Users/barbchoy/.rvm/gems/ruby-2.6.1/bin/ruby_executable_hooks:24:in `eval'
+/Users/barbchoy/.rvm/gems/ruby-2.6.1/bin/ruby_executable_hooks:24:in `<main>'
+Started GET "/" for 127.0.0.1 at 2019-06-03 12:30:07 -0700
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+Completed 200 OK in 80ms (Views: 77.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/12" for 127.0.0.1 at 2019-06-03 12:30:09 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_form.html.erb (0.9ms)
+  Rendered users/show.html.erb within layouts/application (76.4ms)
+Completed 200 OK in 174ms (Views: 132.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/houses.json" for 127.0.0.1 at 2019-06-03 12:30:18 -0700
+Processing by HousesController#index as JSON
+Completed 406 Not Acceptable in 61ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UnknownFormat (HousesController#index is missing a template for this request format and variant.
+
+request.formats: ["application/json"]
+request.variant: []):
+  
+actionpack (5.2.3) lib/action_controller/metal/implicit_render.rb:42:in `default_render'
+actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.3) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.3) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.3) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+omniauth (1.9.0) lib/omniauth/strategy.rb:192:in `call!'
+omniauth (1.9.0) lib/omniauth/strategy.rb:169:in `call'
+omniauth (1.9.0) lib/omniauth/builder.rb:64:in `call'
+rack (2.0.6) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+thin (1.7.2) lib/thin/connection.rb:86:in `block in pre_process'
+thin (1.7.2) lib/thin/connection.rb:84:in `catch'
+thin (1.7.2) lib/thin/connection.rb:84:in `pre_process'
+thin (1.7.2) lib/thin/connection.rb:53:in `process'
+thin (1.7.2) lib/thin/connection.rb:39:in `receive_data'
+eventmachine (1.2.7) lib/eventmachine.rb:195:in `run_machine'
+eventmachine (1.2.7) lib/eventmachine.rb:195:in `run'
+thin (1.7.2) lib/thin/backends/base.rb:73:in `start'
+thin (1.7.2) lib/thin/server.rb:162:in `start'
+thin (1.7.2) lib/thin/controllers/controller.rb:87:in `start'
+thin (1.7.2) lib/thin/runner.rb:203:in `run_command'
+thin (1.7.2) lib/thin/runner.rb:159:in `run!'
+thin (1.7.2) bin/thin:6:in `<top (required)>'
+/Users/barbchoy/.rvm/gems/ruby-2.6.1/bin/thin:23:in `load'
+/Users/barbchoy/.rvm/gems/ruby-2.6.1/bin/thin:23:in `<main>'
+/Users/barbchoy/.rvm/gems/ruby-2.6.1/bin/ruby_executable_hooks:24:in `eval'
+/Users/barbchoy/.rvm/gems/ruby-2.6.1/bin/ruby_executable_hooks:24:in `<main>'
+Started GET "/" for 127.0.0.1 at 2019-06-03 12:30:31 -0700
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+Completed 200 OK in 66ms (Views: 63.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2019-06-03 12:30:34 -0700
+Processing by SessionsController#destroy as HTML
+Redirected to https://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-06-03 12:30:34 -0700
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 76ms (Views: 74.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2019-06-03 12:30:37 -0700
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 72ms (Views: 68.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2019-06-03 12:30:38 -0700
+Started GET "/auth/facebook" for 127.0.0.1 at 2019-06-03 12:30:38 -0700
+Started GET "/auth/facebook/callback?code=AQB27bu-q17kXe78xD2Juy1OO1zNho4aQnsldKlDO9c3TT5zGjBInjlbqyPf3Dk-c_zdyBPFHsYVbEWk_JDiy9Vi1HpygbECZmPV-CsPekTtdV4ZWd_Z23Ii-wknZ8xaJIFVIoEt1m4mDBzB44lFh4xQAhipocLCOuW8QSgb1avb-ZQwCsr-UFsjUiEEcBWauvEEB-JJyG1D-6s-g-v4Z447sqKs-2ay6dq11ltAqgJ6gB5K5QeILruwVcsVU8iqC4f3kPdmE3UpI5WMVAki2MAlB542RmkZSj0VV2VH6bM20T3thzO3t88loeAedyu0RJI&state=8109299641d080d39290553d243910862de9975bd1fa06da" for 127.0.0.1 at 2019-06-03 12:30:38 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"AQB27bu-q17kXe78xD2Juy1OO1zNho4aQnsldKlDO9c3TT5zGjBInjlbqyPf3Dk-c_zdyBPFHsYVbEWk_JDiy9Vi1HpygbECZmPV-CsPekTtdV4ZWd_Z23Ii-wknZ8xaJIFVIoEt1m4mDBzB44lFh4xQAhipocLCOuW8QSgb1avb-ZQwCsr-UFsjUiEEcBWauvEEB-JJyG1D-6s-g-v4Z447sqKs-2ay6dq11ltAqgJ6gB5K5QeILruwVcsVU8iqC4f3kPdmE3UpI5WMVAki2MAlB542RmkZSj0VV2VH6bM20T3thzO3t88loeAedyu0RJI", "state"=>"8109299641d080d39290553d243910862de9975bd1fa06da"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "10156880517010605"], ["LIMIT", 1]]
+Redirected to https://localhost:3000/users/12
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/users/12" for 127.0.0.1 at 2019-06-03 12:30:39 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_form.html.erb (0.7ms)
+  Rendered users/show.html.erb within layouts/application (45.6ms)
+Completed 200 OK in 152ms (Views: 148.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2019-06-03 12:30:47 -0700
+Processing by SessionsController#destroy as HTML
+Redirected to https://localhost:3000/
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-06-03 12:30:48 -0700
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 54ms (Views: 51.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2019-06-03 12:30:49 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 96ms (Views: 49.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2019-06-03 12:30:50 -0700
+Started GET "/auth/facebook" for 127.0.0.1 at 2019-06-03 12:30:51 -0700
+Started GET "/auth/facebook/callback?code=AQD-OuhzWpeR81LGbXki1nCoLusV9Q-M45sLWwTw0LrvIR7Gim85H_gx51rO-DcJDOPMeRBkl_8wAsH5DBN9celkPk8HP3Z3r_x7CuT6MEwocztGLCF1Eo9H-kUcrN-9UfIZjwz8aHOYB96qxJuV4PeZi-nJfedYx5afDlk-DHUrBxts9hPI-YA4VaHErcAVZTRF1UxLKyOwyLkKc-pBrJo6dgQ-aVpZV5VJyc2FeMFjnh_fWw4zdM-yiM9fw3WLvhmABC-3rP02Z8dpOORsshzqiN61l2uX2pcqquiW_57uxZ8AJAdP6hZxpXfrd8nE4tQ&state=f8ba433fae28fecf1693b930794ed0161c9c574ab228d8b2" for 127.0.0.1 at 2019-06-03 12:30:51 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"AQD-OuhzWpeR81LGbXki1nCoLusV9Q-M45sLWwTw0LrvIR7Gim85H_gx51rO-DcJDOPMeRBkl_8wAsH5DBN9celkPk8HP3Z3r_x7CuT6MEwocztGLCF1Eo9H-kUcrN-9UfIZjwz8aHOYB96qxJuV4PeZi-nJfedYx5afDlk-DHUrBxts9hPI-YA4VaHErcAVZTRF1UxLKyOwyLkKc-pBrJo6dgQ-aVpZV5VJyc2FeMFjnh_fWw4zdM-yiM9fw3WLvhmABC-3rP02Z8dpOORsshzqiN61l2uX2pcqquiW_57uxZ8AJAdP6hZxpXfrd8nE4tQ", "state"=>"f8ba433fae28fecf1693b930794ed0161c9c574ab228d8b2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "10156880517010605"], ["LIMIT", 1]]
+Redirected to https://localhost:3000/users/12
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/users/12" for 127.0.0.1 at 2019-06-03 12:30:52 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_form.html.erb (1.0ms)
+  Rendered users/show.html.erb within layouts/application (40.9ms)
+Completed 200 OK in 129ms (Views: 126.5ms | ActiveRecord: 0.2ms)
+
+
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from require at /Users/barbchoy/.rvm/rubies/ruby-2.6.1/lib/ruby/site_ruby/2.6.0/rubygems/core_ext/kernel_require.rb:54)
+Started GET "/houses.json" for 127.0.0.1 at 2019-06-03 12:52:50 -0700
+Processing by HousesController#index as JSON
+Completed 406 Not Acceptable in 93ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UnknownFormat (HousesController#index is missing a template for this request format and variant.
+
+request.formats: ["application/json"]
+request.variant: []):
+  
+actionpack (5.2.3) lib/action_controller/metal/implicit_render.rb:42:in `default_render'
+actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.3) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.3) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.3) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+omniauth (1.9.0) lib/omniauth/strategy.rb:192:in `call!'
+omniauth (1.9.0) lib/omniauth/strategy.rb:169:in `call'
+omniauth (1.9.0) lib/omniauth/builder.rb:64:in `call'
+rack (2.0.6) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+thin (1.7.2) lib/thin/connection.rb:86:in `block in pre_process'
+thin (1.7.2) lib/thin/connection.rb:84:in `catch'
+thin (1.7.2) lib/thin/connection.rb:84:in `pre_process'
+thin (1.7.2) lib/thin/connection.rb:53:in `process'
+thin (1.7.2) lib/thin/connection.rb:39:in `receive_data'
+eventmachine (1.2.7) lib/eventmachine.rb:195:in `run_machine'
+eventmachine (1.2.7) lib/eventmachine.rb:195:in `run'
+thin (1.7.2) lib/thin/backends/base.rb:73:in `start'
+thin (1.7.2) lib/thin/server.rb:162:in `start'
+thin (1.7.2) lib/thin/controllers/controller.rb:87:in `start'
+thin (1.7.2) lib/thin/runner.rb:203:in `run_command'
+thin (1.7.2) lib/thin/runner.rb:159:in `run!'
+thin (1.7.2) bin/thin:6:in `<top (required)>'
+/Users/barbchoy/.rvm/gems/ruby-2.6.1/bin/thin:23:in `load'
+/Users/barbchoy/.rvm/gems/ruby-2.6.1/bin/thin:23:in `<main>'
+/Users/barbchoy/.rvm/gems/ruby-2.6.1/bin/ruby_executable_hooks:24:in `eval'
+/Users/barbchoy/.rvm/gems/ruby-2.6.1/bin/ruby_executable_hooks:24:in `<main>'
+Started GET "/houses.json" for 127.0.0.1 at 2019-06-03 12:52:51 -0700
+Processing by HousesController#index as JSON
+Completed 406 Not Acceptable in 49ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UnknownFormat (HousesController#index is missing a template for this request format and variant.
+
+request.formats: ["application/json"]
+request.variant: []):
+  
+actionpack (5.2.3) lib/action_controller/metal/implicit_render.rb:42:in `default_render'
+actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.3) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.3) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.3) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+omniauth (1.9.0) lib/omniauth/strategy.rb:192:in `call!'
+omniauth (1.9.0) lib/omniauth/strategy.rb:169:in `call'
+omniauth (1.9.0) lib/omniauth/builder.rb:64:in `call'
+rack (2.0.6) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+thin (1.7.2) lib/thin/connection.rb:86:in `block in pre_process'
+thin (1.7.2) lib/thin/connection.rb:84:in `catch'
+thin (1.7.2) lib/thin/connection.rb:84:in `pre_process'
+thin (1.7.2) lib/thin/connection.rb:53:in `process'
+thin (1.7.2) lib/thin/connection.rb:39:in `receive_data'
+eventmachine (1.2.7) lib/eventmachine.rb:195:in `run_machine'
+eventmachine (1.2.7) lib/eventmachine.rb:195:in `run'
+thin (1.7.2) lib/thin/backends/base.rb:73:in `start'
+thin (1.7.2) lib/thin/server.rb:162:in `start'
+thin (1.7.2) lib/thin/controllers/controller.rb:87:in `start'
+thin (1.7.2) lib/thin/runner.rb:203:in `run_command'
+thin (1.7.2) lib/thin/runner.rb:159:in `run!'
+thin (1.7.2) bin/thin:6:in `<top (required)>'
+/Users/barbchoy/.rvm/gems/ruby-2.6.1/bin/thin:23:in `load'
+/Users/barbchoy/.rvm/gems/ruby-2.6.1/bin/thin:23:in `<main>'
+/Users/barbchoy/.rvm/gems/ruby-2.6.1/bin/ruby_executable_hooks:24:in `eval'
+/Users/barbchoy/.rvm/gems/ruby-2.6.1/bin/ruby_executable_hooks:24:in `<main>'
+Started GET "/houses.json" for 127.0.0.1 at 2019-06-03 13:00:57 -0700
+Processing by HousesController#index as JSON
+Completed 406 Not Acceptable in 35ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UnknownFormat (HousesController#index is missing a template for this request format and variant.
+
+request.formats: ["application/json"]
+request.variant: []):
+  
+actionpack (5.2.3) lib/action_controller/metal/implicit_render.rb:42:in `default_render'
+actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.3) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.3) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.3) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+omniauth (1.9.0) lib/omniauth/strategy.rb:192:in `call!'
+omniauth (1.9.0) lib/omniauth/strategy.rb:169:in `call'
+omniauth (1.9.0) lib/omniauth/builder.rb:64:in `call'
+rack (2.0.6) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+thin (1.7.2) lib/thin/connection.rb:86:in `block in pre_process'
+thin (1.7.2) lib/thin/connection.rb:84:in `catch'
+thin (1.7.2) lib/thin/connection.rb:84:in `pre_process'
+thin (1.7.2) lib/thin/connection.rb:53:in `process'
+thin (1.7.2) lib/thin/connection.rb:39:in `receive_data'
+eventmachine (1.2.7) lib/eventmachine.rb:195:in `run_machine'
+eventmachine (1.2.7) lib/eventmachine.rb:195:in `run'
+thin (1.7.2) lib/thin/backends/base.rb:73:in `start'
+thin (1.7.2) lib/thin/server.rb:162:in `start'
+thin (1.7.2) lib/thin/controllers/controller.rb:87:in `start'
+thin (1.7.2) lib/thin/runner.rb:203:in `run_command'
+thin (1.7.2) lib/thin/runner.rb:159:in `run!'
+thin (1.7.2) bin/thin:6:in `<top (required)>'
+/Users/barbchoy/.rvm/gems/ruby-2.6.1/bin/thin:23:in `load'
+/Users/barbchoy/.rvm/gems/ruby-2.6.1/bin/thin:23:in `<main>'
+/Users/barbchoy/.rvm/gems/ruby-2.6.1/bin/ruby_executable_hooks:24:in `eval'
+/Users/barbchoy/.rvm/gems/ruby-2.6.1/bin/ruby_executable_hooks:24:in `<main>'
+Started GET "/houses.json" for 127.0.0.1 at 2019-06-03 15:33:06 -0700
+Processing by HousesController#index as JSON
+  [1m[36mHouse Load (0.2ms)[0m  [1m[34mSELECT "houses".* FROM "houses"[0m
+Completed 200 OK in 21ms (Views: 11.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/houses.json" for 127.0.0.1 at 2019-06-03 16:35:07 -0700
+Processing by HousesController#index as JSON
+  [1m[36mHouse Load (0.3ms)[0m  [1m[34mSELECT "houses".* FROM "houses"[0m
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/houses.json" for 127.0.0.1 at 2019-06-03 16:51:53 -0700
+Processing by HousesController#index as JSON
+  [1m[36mHouse Load (0.3ms)[0m  [1m[34mSELECT "houses".* FROM "houses"[0m
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/houses.json" for 127.0.0.1 at 2019-06-03 16:52:08 -0700
+Processing by HousesController#index as JSON
+  [1m[36mHouse Load (0.3ms)[0m  [1m[34mSELECT "houses".* FROM "houses"[0m
+Completed 200 OK in 8ms (Views: 5.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/houses.json" for 127.0.0.1 at 2019-06-03 16:52:12 -0700
+Processing by HousesController#index as JSON
+  [1m[36mHouse Load (0.2ms)[0m  [1m[34mSELECT "houses".* FROM "houses"[0m
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.2ms)
+
+
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from require at /Users/barbchoy/.rvm/rubies/ruby-2.6.1/lib/ruby/site_ruby/2.6.0/rubygems/core_ext/kernel_require.rb:54)
+Started GET "/houses.json" for 127.0.0.1 at 2019-06-03 17:45:34 -0700
+Processing by HousesController#index as JSON
+  [1m[36mHouse Load (0.3ms)[0m  [1m[34mSELECT "houses".* FROM "houses"[0m
+Completed 200 OK in 6ms (Views: 2.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/houses" for 127.0.0.1 at 2019-06-03 17:45:42 -0700
+Processing by HousesController#index as HTML
+  Rendering houses/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  Rendered users/_form.html.erb (0.9ms)
+  [1m[36mHouse Load (0.3ms)[0m  [1m[34mSELECT "houses".* FROM "houses"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[36mCACHE House Load (0.0ms)[0m  [1m[34mSELECT "houses".* FROM "houses"[0m
+  Rendered houses/index.html.erb within layouts/application (54.7ms)
+Completed 200 OK in 219ms (Views: 215.5ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/houses/1" for 127.0.0.1 at 2019-06-03 17:45:47 -0700
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHouse Load (0.3ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering houses/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."house_id" = ?[0m  [["house_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("reviews"."cleanliness_rating") FROM "reviews" WHERE "reviews"."house_id" = ?[0m  [["house_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("reviews"."location_rating") FROM "reviews" WHERE "reviews"."house_id" = ?[0m  [["house_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("reviews"."value_rating") FROM "reviews" WHERE "reviews"."house_id" = ?[0m  [["house_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("reviews"."cleanliness_rating") FROM "reviews" WHERE "reviews"."house_id" = ?[0m  [["house_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("reviews"."location_rating") FROM "reviews" WHERE "reviews"."house_id" = ?[0m  [["house_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("reviews"."value_rating") FROM "reviews" WHERE "reviews"."house_id" = ?[0m  [["house_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."house_id" = ?[0m  [["house_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."house_id" = ?[0m  [["house_id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered houses/show.html.erb within layouts/application (15.3ms)
+Completed 200 OK in 101ms (Views: 54.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/houses.json" for 127.0.0.1 at 2019-06-03 17:46:00 -0700
+Processing by HousesController#index as JSON
+  [1m[36mHouse Load (0.3ms)[0m  [1m[34mSELECT "houses".* FROM "houses"[0m
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/houses.json" for 127.0.0.1 at 2019-06-03 17:46:00 -0700
+Processing by HousesController#index as JSON
+  [1m[36mHouse Load (0.3ms)[0m  [1m[34mSELECT "houses".* FROM "houses"[0m
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.3ms)
+
+
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from require at /Users/barbchoy/.rvm/rubies/ruby-2.6.1/lib/ruby/site_ruby/2.6.0/rubygems/core_ext/kernel_require.rb:54)
+Started GET "/houses.json" for 127.0.0.1 at 2019-06-03 17:51:08 -0700
+Processing by HousesController#index as JSON
+  [1m[36mHouse Load (0.2ms)[0m  [1m[34mSELECT "houses".* FROM "houses"[0m
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/houses.json" for 127.0.0.1 at 2019-06-03 17:51:09 -0700
+Processing by HousesController#index as JSON
+  [1m[36mHouse Load (0.3ms)[0m  [1m[34mSELECT "houses".* FROM "houses"[0m
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 0.3ms)
+
+

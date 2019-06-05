@@ -22,6 +22,11 @@ class HousesController < ApplicationController
       @houses = @houses.in_location(params[:city])
     end
 
+    respond_to do |f|
+         f.html {render :index}
+         f.json {render json: @houses}
+     end
+
   end
 
   def create
