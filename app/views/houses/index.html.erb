@@ -10,7 +10,7 @@
   <% if house.owner == current_user %>
     <%= link_to "Show/Edit #{house.name}", house_path(house)%></p>
   <% else %>
-    <%= link_to "View", house_path(house)%></p>
+    <%= link_to "View", house_path(house), :id =>"view" %></p>
   <% end %>
 <% end %>
 <% if current_user.owner == true %>

@@ -26,7 +26,7 @@ class HousesController < ApplicationController
          f.html {render :index}
          f.json {render json: @houses}
      end
-
+    # render layout: 'houses'
   end
 
   def create
@@ -49,6 +49,12 @@ class HousesController < ApplicationController
 
   def show
     @house = House.find(params[:id])
+
+    respond_to do |f|
+         f.html {render :show}
+         f.json {render json: @house}
+     end
+
   end
 
   def update
