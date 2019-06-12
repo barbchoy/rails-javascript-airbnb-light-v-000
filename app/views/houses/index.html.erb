@@ -3,19 +3,22 @@
 <% end %>
 <h1>Houses For Rent</h1>
 
-<% @houses.each do |house| %>
+<div class="house-details-div">
 
+<% @houses.each do |house| %>
   <p><%=house.name%> , max <%=house.max_guests%> guests, $<%=house.price_per_night%> per night, Pets allowed: <%="Yes" if house.pets_allowed%><%="No" if !house.pets_allowed%>
 
   <% if house.owner == current_user %>
     <%= link_to "Show/Edit #{house.name}", house_path(house)%></p>
   <% else %>
-    <%= link_to "View", house_path(house), :id =>"view" %></p>
+    <%= link_to "View", house_path(house), :class =>"house-details" %></p>
   <% end %>
 <% end %>
+</div>
 <% if current_user.owner == true %>
   <%= link_to "Add A New House", new_house_path %>
 <% end %>
+
 
 <br><br>
 <h4>Filter by:</h4>

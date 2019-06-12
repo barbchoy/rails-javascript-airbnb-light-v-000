@@ -15,15 +15,18 @@
 // }
 
 function listenForClick(){
-  document.getElementById("view").addEventListener("click", function(event){
+  console.log("listening for click...")
+  $(document).on("click", ".house-details-div a", function(event){
+    debugger;
+      href=$(this).attr("href")
       event.preventDefault()
-      getPosts()
+      getPosts(href)
     })
 }
 
-function getPosts() {
+function getPosts(href) {
   $.ajax({
-    url: 'http://localhost:3000/houses',
+    url: 'http://localhost:3000/${href}',
     method: 'get',
     dataType: 'json'
   }).done(function(data){
