@@ -7,7 +7,7 @@
 
 <% @houses.each do |house| %>
   <p><%=house.name%> , max <%=house.max_guests%> guests, $<%=house.price_per_night%> per night, Pets allowed: <%="Yes" if house.pets_allowed%><%="No" if !house.pets_allowed%>
-
+  <div class="details-div-<%=house.id%>"></div>
   <% if house.owner == current_user %>
     <%= link_to "Show/Edit #{house.name}", house_path(house)%></p>
   <% else %>

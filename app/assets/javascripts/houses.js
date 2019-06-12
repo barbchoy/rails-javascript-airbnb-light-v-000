@@ -26,15 +26,16 @@ function listenForClick(){
 
 function getPosts(href) {
   $.ajax({
-    url: 'http://localhost:3000/${href}',
+    url: `http://0.0.0.0:3000${href}`,
     method: 'get',
     dataType: 'json'
   }).done(function(data){
     console.log("the data is", data)
     debugger
-    let myHouse = newHouse(data[0])
+    let myHouse = new House(data)
     let myPostHTML = myHouse.postHTML()
-    document.getElementById('ajax-houses').innerHTML += myHouseHTML
+    let houseId = myHouse.id
+    document.getElementById(`details-div-${houseId}`).innerHTML += myHouseHTML
   })
 }
 
@@ -69,9 +70,10 @@ House.prototype.postHTML = function(){
   return(`
     <div>
       <h3>$(this.name)</h3>
-      <p>Price Per Night: ${this.price_per_night}</p>
+      <p>Price Per Night: $${this.price_per_night}</p>
       <p>City: ${this.city}</p>
       <p>Max # of Guests: ${this.max_guests}</p>
       <p>Pets Allowed? ${this.pets_allowed}</p>
+    </div>
   `)
 }
