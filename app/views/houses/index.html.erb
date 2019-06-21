@@ -1,3 +1,5 @@
+
+
 <% if !current_user.owner %>
 <%=render partial: 'users/form', locals: {user: current_user} %>
 <% end %>
@@ -6,17 +8,19 @@
 <div class="house-details-div">
 
 <% @houses.each do |house| %>
-  <p><%=house.name%> , max <%=house.max_guests%> guests, $<%=house.price_per_night%> per night, Pets allowed: <%="Yes" if house.pets_allowed%><%="No" if !house.pets_allowed%>
-  <div class="details-div-<%=house.id%>"></div>
+  <p><h4><%=house.name%> , max <%=house.max_guests%> guests, $<%=house.price_per_night%> per night, Pets allowed: <%="Yes" if house.pets_allowed%><%="No" if !house.pets_allowed%></h4>
+
   <% if house.owner == current_user %>
     <%= link_to "Show/Edit #{house.name}", house_path(house)%></p>
   <% else %>
-    <%= link_to "View", house_path(house), :class =>"house-details" %></p>
+    <div id="details-div-<%=house.id%>"><%= link_to "Read more about the space", house_path(house), :class =>"house-details" %></p></div>
   <% end %>
 <% end %>
 </div>
 <% if current_user.owner == true %>
-  <%= link_to "Add A New House", new_house_path %>
+  <div id="new-house-form-div">
+  <button id="ajax-new-house"%>Add A New House</button>
+  </div>
 <% end %>
 
 

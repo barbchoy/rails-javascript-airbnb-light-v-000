@@ -1,5 +1,11 @@
 class HousesController < ApplicationController
   def index
+
+    if !current_user
+      redirect_to '/' 
+      return
+    end
+
     @houses = House.all
     if params[:price_per_night]=="High to Low"
       @houses = @houses.sort_by_price_per_night_desc

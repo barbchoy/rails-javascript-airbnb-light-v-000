@@ -18,6 +18,8 @@ ActiveRecord::Schema.define(version: 2019_04_10_025105) do
     t.string "city"
     t.integer "max_guests"
     t.boolean "pets_allowed"
+    t.text "description"
+    t.text "amenities"
     t.integer "owner_id"
     t.index ["owner_id"], name: "index_houses_on_owner_id"
   end
