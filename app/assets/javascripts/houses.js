@@ -3,7 +3,24 @@ $(function(){
   console.log('document is ready ...')
   console.log('houses.js is loaded ...')
   listenForClick()
-  listenForNewHouseFormClick()
+
+  $('#new_house').submit(function(event) {
+    //prevent form from submitting the default way
+    event.preventDefault();
+
+    var values = $(this).serialize();
+
+    var posting = $.post('/houses', values);
+
+    posting.done(function(data) {
+      // TODO: handle response
+      $("#form-container").html("")
+      const newHouse = new House(data)
+      const htmlToAdd = newHouse.formatHouse()
+      $("#form-container").html(htmlToAdd)
+
+    });
+  });
 })
 
 
@@ -33,16 +50,10 @@ function getPosts(href) {
        hideDetailsOnClick(houseId);
      })
 
-     document.getElementById(`details-button-${houseId}`).addEventListener("click", function(event){
-        detailsButtonOnClick(houseId);
-      })
-
   })
 }
 
-function detailsButtonOnClick() {
-  console.log("See full details is clicked...")
-}
+
 
 function hideDetailsOnClick(houseId){
   console.log("Hide button is clicked...")
@@ -56,13 +67,6 @@ function hideDetailsOnClick(houseId){
   detailsDiv.appendChild(a);
 }
 
-function listenForNewHouseFormClick(){
-  $('button#ajax-new-house').on('click', function(event){
-    event.preventDefault()
-    let newHouseForm = House.newHouseForm()
-    document.querySelector('div#new-house-form-div').innerHTML = newHouseForm
-  })
-}
 
 class House {
   constructor(obj){
@@ -77,26 +81,8 @@ class House {
     this.amenities = obj.amenities
   }
 
-  static newHouseForm(){
-    return(`
-      <br><br>
-    <strong>***** New House Form *****</strong>
-      <form>
-        <label>Name of the house: </label><input id='name' type='text' name='name'></input><br>
-        <label>Price Per Night: $</label><input id = 'price_per_night' name='price_per_night' type='text'></input><br>
-        <label>City: </label><input id='city' name='city' type='text'></input><br>
-        <label>Max # of guests: </label><input id='max_guests' name='max_guests' type='text'></input><br>
-        <input type="hidden" id="pets_allowed" name="pets_allowed" value="false">
-        <label>Pets Allowed? Yes if checked:</label><input id='pets_allowed' name='pets_allowed' type='checkbox'></input><br>
-        <label>Description: </label><input id='description' name='description' type='text'></input><br>
-        <label>Amenities: </label><input id='amenities' name='amenities' type='text'></input><br>
-        <input type="hidden" id="owner_id" name="owner_id" value=${this.owner_id}/>
-        <input type='submit'/>
-      </form>
-    `)
-  }
-}
 
+}
 
 
 House.prototype.postHTML = function(){
@@ -106,7 +92,21 @@ House.prototype.postHTML = function(){
       <p><strong>Amenities:</strong> ${this.amenities}</p>
       <p><strong>City:</strong> ${this.city}</p>
       <button id="hide-button-${this.id}">Hide ^</button>
-      <button id="details-button-${this.id}">See full details</button>
+      <a href="/houses/${this.id}">See full details</a>
+      <br><br>
     </div>
   `)
+}
+
+House.prototype.formatHouse = function(){
+  let houseHTML = `
+    <h3>${this.name}</h3>
+    <p id="housePrice">Price Per Night: $${this.price_per_night}</p>
+    <p id="houseCity">City: ${this.city}</p>
+    <p id="houseMaxGuests">Max # of Guests: ${this.max_guests}</p>
+    <p id="housePets">Pets Allowed? ${this.pets_allowed}</p>
+    <p id="houseDescription">Description: ${this.description}</p>
+    <p id="houseAmenities">Amenities: ${this.amenities}</p>
+  `
+  return houseHTML
 }

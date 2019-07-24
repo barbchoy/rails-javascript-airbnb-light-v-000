@@ -1,21 +1,45 @@
-<h1><%= @house.name %><h1>
-<h2><%=@house.city%></h2>
+<h1 class="houseName"><%= @house.name %><h1>
+<h2 class="houseCity"><%=@house.city%></h2>
 
-
-<p>Price Per Night: $<%=@house.price_per_night%></p>
-<p>Max guests: <%=@house.max_guests%></p>
+<p class="housePrice">Price Per Night: $<%=@house.price_per_night%></p>
+<p class="houseMaxGuests">Max guests: <%=@house.max_guests%></p>
+<p class="houseDescription">Description: <%=@house.description%></p>
+<p class="houseAmenities">Amenities: <%=@house.amenities%></p>
 <% if @house.reviews.count !=0 %>
-<p>Average Cleaniless rating: <%@house.cleanliness_rating.round.times do %>&#9733<% end %></p>
-<p>Average Location rating: <%@house.location_rating.round.times do %>&#9733<% end %></p>
-<p>Average Value rating: <%@house.value_rating.round.times do %>&#9733<% end %></p>
-<p>Overall Rating: <%@house.overall_rating.round.times do %>&#9733<% end %></p>
+<p class="houseCleaninessRating">Average Cleanliness rating: <%@house.cleanliness_rating.round.times do %>&#9733<% end %></p>
+<p class="houseLocationRating">Average Location rating: <%@house.location_rating.round.times do %>&#9733<% end %></p>
+<p class="houseAverageValue">Average Value rating: <%@house.value_rating.round.times do %>&#9733<% end %></p>
+<p class="houseOverallRating">Overall Rating: <%@house.overall_rating.round.times do %>&#9733<% end %></p>
 <% end %>
-<p>Pets allowed: <%="Yes" if @house.pets_allowed%><%="No" if !@house.pets_allowed%></p>
-<p>Total number of reviews: <%=@house.reviews.count%>
+<p class="housePetsAllowed">Pets allowed: <%="Yes" if @house.pets_allowed%><%="No" if !@house.pets_allowed%></p>
+<p class="houseNoOfReviews">Total number of reviews: <%=@house.reviews.count%>
 <% if @house.reviews.count !=0 %>
 <%= link_to "See all reviews", house_reviews_path(@house)%></p>
 <% end %>
 <br><br>
+
+<a href="#" class="js-next" data-id="<%=@house.id%>">Next House</a>
+
+<script type="text/javascript" charset="utf-8">
+$(function () {
+  $(".js-next").on("click", function(event) {
+    event.preventDefault();
+
+    var nextId = parseInt($(".js-next").attr("data-id")) + 1;
+    debugger;
+    $.get("/houses/" + nextId + "/data", function(data) {
+      $(".houseName").text(data["name"]);
+      $(".houseCity").text(data["city"]);
+      $(".housePrice").text(data["price_per_night"]);
+      $(".houseMaxGuests").text(data["max_guests"]);
+      $(".houseDescription").text(data["description"]);
+      $(".houseAmenities").text(data["amenities"]);
+      // re-set the id to current on the link
+      $(".js-next").attr("data-id", data["id"]);
+    });
+  });
+});
+</script>
 
 
 <%= form_tag stays_path, method: :post  do %>

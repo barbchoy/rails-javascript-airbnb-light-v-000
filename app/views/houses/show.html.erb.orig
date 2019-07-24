@@ -1,0 +1,39 @@
+<h1><%= @house.name %><h1>
+<h2><%=@house.city%></h2>
+
+
+<p>Price Per Night: $<%=@house.price_per_night%></p>
+<p>Max guests: <%=@house.max_guests%></p>
+<p>Description: <%=@house.description%></p>
+<p>Amenities: <%=@house.amenities%></p>
+<% if @house.reviews.count !=0 %>
+<p>Average Cleaniless rating: <%@house.cleanliness_rating.round.times do %>&#9733<% end %></p>
+<p>Average Location rating: <%@house.location_rating.round.times do %>&#9733<% end %></p>
+<p>Average Value rating: <%@house.value_rating.round.times do %>&#9733<% end %></p>
+<p>Overall Rating: <%@house.overall_rating.round.times do %>&#9733<% end %></p>
+<% end %>
+<p>Pets allowed: <%="Yes" if @house.pets_allowed%><%="No" if !@house.pets_allowed%></p>
+<p>Total number of reviews: <%=@house.reviews.count%>
+<% if @house.reviews.count !=0 %>
+<%= link_to "See all reviews", house_reviews_path(@house)%></p>
+<% end %>
+<br><br>
+
+
+<%= form_tag stays_path, method: :post  do %>
+<%= hidden_field_tag(:guest_id, current_user.id) %>
+<%= hidden_field_tag(:house_id, @house.id) %>
+<% if @house.owner == current_user %>
+  <%= link_to "Edit House", edit_house_path(@house)%>&nbsp&nbsp
+
+  <%= link_to 'Delete House', house_path(@house),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %><br><br>
+<% elsif !current_user.owner %>
+  <label>How many days are you going to stay?</label>
+  <%= text_field_tag :days %>&nbsp
+  <%= submit_tag "Book This House"%>
+<% end %>
+
+<% end %>
+<br><%= link_to "Back To All Houses", houses_path %>

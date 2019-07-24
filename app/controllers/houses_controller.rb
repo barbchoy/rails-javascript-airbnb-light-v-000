@@ -2,7 +2,7 @@ class HousesController < ApplicationController
   def index
 
     if !current_user
-      redirect_to '/' 
+      redirect_to '/'
       return
     end
 
@@ -39,7 +39,8 @@ class HousesController < ApplicationController
     @house = House.create(house_params)
     @house.owner = current_user
     if @house.save
-      redirect_to house_path(@house)
+      # redirect_to house_path(@house)
+      render json: @house, status: 201
     else
       render 'new'
     end
@@ -60,8 +61,14 @@ class HousesController < ApplicationController
          f.html {render :show}
          f.json {render json: @house}
      end
-
   end
+
+  def data
+    house = House.find(params[:id])
+    # render json: PostSerializer.serialize(post)
+    render json: HouseSerializer.serialize(house)
+  end
+
 
   def update
     @house = House.find(params[:id])
@@ -84,6 +91,6 @@ class HousesController < ApplicationController
   private
 
   def house_params
-    params.require(:house).permit(:name, :price_per_night, :city, :max_guests, :pets_allowed, reviews_attributes: [:title, :cleanliness_rating, :location_rating, :value_rating, :comments, :house_id, :user_id] )
+    params.require(:house).permit(:name, :price_per_night, :city, :max_guests, :pets_allowed, :description, :amenities, reviews_attributes: [:title, :cleanliness_rating, :location_rating, :value_rating, :comments, :house_id, :user_id] )
   end
 end

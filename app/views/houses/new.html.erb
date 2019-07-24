@@ -1,7 +1,19 @@
 <h1>Houses#new</h1>
 <p>Find me in app/views/houses/new.html.erb</p>
 
-<%=form_tag houses_path do %>
+<div id="newHouse">
+  <h2 id="houseName"></h2>
+  <p id="housePrice"></p>
+  <p id="houseCity"></p>
+  <p id="houseMaxGuests"></p>
+  <p id="houseDescription"></p>
+  <p id="houseAmenities"></p>
+  <p id="housePets"></p>
+  <div id="buttons"></div>
+</div>
+
+<div id="form-container">
+<%=form_tag houses_path, :id => "new_house", :class => "new_house" do %>
 <% if @house.errors.any? %>
   <div id="error_explanation">
     <p>There were some errors: </p>
@@ -14,5 +26,12 @@
     <%end%>
 <%= render 'house' %>
 <%= submit_tag "Create House" %>
-
 <% end %>
+</div>
+
+<script type="text/javascript" charset="utf-8">
+  $(function () {
+
+
+  });
+</script>

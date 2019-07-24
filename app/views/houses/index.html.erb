@@ -9,17 +9,17 @@
 
 <% @houses.each do |house| %>
   <p><h4><%=house.name%> , max <%=house.max_guests%> guests, $<%=house.price_per_night%> per night, Pets allowed: <%="Yes" if house.pets_allowed%><%="No" if !house.pets_allowed%></h4>
-
-  <% if house.owner == current_user %>
-    <%= link_to "Show/Edit #{house.name}", house_path(house)%></p>
-  <% else %>
-    <div id="details-div-<%=house.id%>"><%= link_to "Read more about the space", house_path(house), :class =>"house-details" %></p></div>
+  <div id="details-div-<%=house.id%>"><%= link_to "Read more about the space", house_path(house), :class =>"house-details" %></p></div>
+  <div id="show-edit-details">
+    <% if house.owner == current_user %>
+    <%= button_to "Show/Edit #{house.name}", house_path(house), :method => :get %></p>
   <% end %>
+  </div>
 <% end %>
 </div>
 <% if current_user.owner == true %>
   <div id="new-house-form-div">
-  <button id="ajax-new-house"%>Add A New House</button>
+    <%= link_to "Add A New House", new_house_path%>
   </div>
 <% end %>
 
