@@ -29,6 +29,11 @@ Rails.application.routes.draw do
   # resources :users
   # resources :houses
 
+  resources :users
+  resources :houses
+  resources :reviews, only: [:show]
+  resources :stays, only: [:create]
+  
   resources :users, only: [:show, :index] do
     resources :reviews, only: [:show, :index]
   end

@@ -135,7 +135,7 @@ class House {
 House.prototype.simplyHouseHTML = function () {
   return(`
     <h2>${this.name}, ${this.city} </h2>
-    <div id="house-details"><a href="/houses/${this.id}">Read more about the space</a></div>
+    <div id="details-div-${this.id}"><a class="house-details" href="/houses/${this.id}">Read more about the space</a></div>
     `)
 };
 
