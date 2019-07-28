@@ -34,6 +34,17 @@ class House < ApplicationRecord
     overall.round
   end
 
+  def next
+    house = House.where("id > ?", id).first
+
+    if house
+      house
+    else
+      House.first
+    end
+
+  end
+
 
 
 

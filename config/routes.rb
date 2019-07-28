@@ -26,8 +26,8 @@ Rails.application.routes.draw do
 
   root 'welcome#home'
 
-  resources :users
-  resources :houses
+  # resources :users
+  # resources :houses
 
   resources :users, only: [:show, :index] do
     resources :reviews, only: [:show, :index]
@@ -50,5 +50,6 @@ Rails.application.routes.draw do
   post '/users/:id', to: "users#update"
   get '/auth/facebook/callback' => 'sessions#create'
   get '/houses/:id/data', to: 'houses#data'
+  get '/houses/:id/next', to: 'houses#next'
 
 end

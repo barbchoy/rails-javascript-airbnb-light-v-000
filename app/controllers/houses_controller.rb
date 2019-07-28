@@ -1,4 +1,7 @@
 class HousesController < ApplicationController
+
+  before_action :set_house, only: [:show, :next]
+
   def index
 
     if !current_user
@@ -59,7 +62,8 @@ class HousesController < ApplicationController
 
     respond_to do |f|
          f.html {render :show}
-         f.json {render json: @house}
+         # f.json {render json: @house}
+         f.json {render json: @house.to_json(include: [reviews:{only: [:title, :comments, :user_id, :house_id]}])}
      end
   end
 
@@ -88,7 +92,16 @@ class HousesController < ApplicationController
     redirect_to houses_path
   end
 
+  def next
+    @next_house = @house.next
+    render json: @next_house
+  end
+
   private
+
+  def set_house
+    @house = House.find_by_id(params[:id])
+  end
 
   def house_params
     params.require(:house).permit(:name, :price_per_night, :city, :max_guests, :pets_allowed, :description, :amenities, reviews_attributes: [:title, :cleanliness_rating, :location_rating, :value_rating, :comments, :house_id, :user_id] )

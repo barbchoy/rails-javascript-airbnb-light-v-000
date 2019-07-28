@@ -32,6 +32,24 @@ function listenForClick(){
       event.preventDefault()
       getPosts(href)
     })
+
+  $(".all_houses").on('click', (e) =>{
+    e.preventDefault()
+    console.log("all houses clicked")
+    fetch('/houses.json')
+    .then(res => res.json())
+    .then(houses => {
+      $('.content-container').html("")
+      houses.forEach((house) => {
+        let myHouse = new House(house)
+        let mySimpleHouseHTML = myHouse.simplyHouseHTML()
+        $('.content-container').append(mySimpleHouseHTML)
+      })
+    })
+
+  })
+
+
 }
 
 function getPosts(href) {
@@ -50,9 +68,38 @@ function getPosts(href) {
        hideDetailsOnClick(houseId);
      })
 
+     document.getElementById(`show-link-${houseId}`).addEventListener("click", function(event){
+        showLinkOnClick(houseId);
+      })
+
   })
 }
 
+function showLinkOnClick(houseId){
+  console.log("Show link is clicked...")
+  console.log($(this))
+  $('.content-container').html("")
+  fetch(`/houses/${houseId}.json`)
+  .then(res => res.json())
+  .then(house => {
+    let myHouse = new House(house)
+    let showHTML = myHouse.formatShow()
+    $('.content-container').append(showHTML)
+  })
+
+  $(document).on('click', `.next-house-${houseId}`, function(){
+    let id = `${houseId}`
+    $('.content-container').html("")
+
+    fetch(`/houses/${id}/next`)
+    .then(res => res.json())
+    .then(house => {
+      let myHouse = new House(house)
+      let showHTML = myHouse.formatShow()
+      $('.content-container').append(showHTML)
+    })
+  })
+}
 
 
 function hideDetailsOnClick(houseId){
@@ -79,10 +126,18 @@ class House {
     this.id = obj.id
     this.description = obj.description
     this.amenities = obj.amenities
+    this.reviews = obj.reviews
   }
 
 
 }
+
+House.prototype.simplyHouseHTML = function () {
+  return(`
+    <h2>${this.name}, ${this.city} </h2>
+    <div id="house-details"><a href="/houses/${this.id}">Read more about the space</a></div>
+    `)
+};
 
 
 House.prototype.postHTML = function(){
@@ -92,7 +147,7 @@ House.prototype.postHTML = function(){
       <p><strong>Amenities:</strong> ${this.amenities}</p>
       <p><strong>City:</strong> ${this.city}</p>
       <button id="hide-button-${this.id}">Hide ^</button>
-      <a href="/houses/${this.id}">See full details</a>
+      <a href="/houses/${this.id}" id="show-link-${this.id}">See full details</a>
       <br><br>
     </div>
   `)
@@ -109,4 +164,21 @@ House.prototype.formatHouse = function(){
     <p id="houseAmenities">Amenities: ${this.amenities}</p>
   `
   return houseHTML
+}
+
+House.prototype.formatShow = function(){
+  let showHTML = `
+  <h3>${this.name}</h3>
+  <p id="housePrice">Price Per Night: $${this.price_per_night}</p>
+  <p id="houseCity">City: ${this.city}</p>
+  <p id="houseMaxGuests">Max # of Guests: ${this.max_guests}</p>
+  <p id="housePets">Pets Allowed? ${this.pets_allowed}</p>
+  <p id="houseDescription">Description: ${this.description}</p>
+  <p id="houseAmenities">Amenities: ${this.amenities}</p>
+  <p id="houseReviews">Reviews: </p>
+  <p><a href="/houses/${this.id}/reviews/new">Give Reviews</a></p>
+  <p><a href="/houses">Back to all houses</a></p>
+
+  `
+  return showHTML
 }
